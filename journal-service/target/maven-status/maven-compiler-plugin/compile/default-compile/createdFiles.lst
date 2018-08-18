@@ -1,0 +1,4 @@
+com/fin/ledgerservice/model/LedgerRecord.class
+com/fin/ledgerservice/LedgerServiceApplication.class
+com/fin/ledgerservice/repository/LedgerRepository.class
+com/fin/ledgerservice/controller/LedgerController.class
