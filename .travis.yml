@@ -1,6 +1,19 @@
 language: java
 jdk: oraclejdk8
 
+env:
+  global:
+    - secure: "sUcSDV+XLrNKH1rT+AhHIn9JOoB/a93uyJMM3ZkCid9trCI5jH5k0CBjoQNZ9BTWqu01TrcDiWK2Dhn6hW3HINmSy34bqMDHU1pvAu8tGWrdaIrDd/wbVBOHufJEL54QN5upfdOQqPZ589Xfh0qb74cJBN3aLDtQoFEpRFKPkLJ1dTe1Tf60SJ7sPQRSl7lg6+y263AOfrS59eBy5kDEk3eZvJ05Ye3Dw7gYR2X3t7uwM/CHi6UZKOBdFj2+7Z2i3pmO42uJa585yhRdt87ce5PvUSh4BQniEzWZ7+8HXsMkJnEU9qTEaHtOGz6ZMU8+Rl3f/XySQgG1IrItbhT29T8W5BWKfpJ5gXpd42nnUQRb7eugMIRVHntmlbhhZo2QNh4NH8NnZycWT2ScRbUUt3BNmg5zCb5JaKXoK/zN6w+fblvdydXB/XGprKCxwp/cNHINQhRf8Dbbg9SgMhKW5DNnyrwTDe2TO3y01/3mBViEhLiiBAXOqwN7jLmMMwCxmfRlQn9NedMnuYG7W7sL9MEDzHcgtIdVhvvY8KZ3tzQ0YKKS8fVA2cwFl9tYnPjVGn0EQzl5lcfuFQhiOBpDv+qWPvyCMp+71zgHdKntCQxfzQ5lT0jE76HPtiIhY1g1phMcvVYa20raOFgdmdyTl+8ZgLG8dkXGHloIkZJWRCU="
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+
+addons:
+  sonarcloud:
+    organization: "roland-jurd-github"
+    token:
+      secure: $SONAR_TOKEN
+
+
+script:
+  - mvn sonar:sonar
