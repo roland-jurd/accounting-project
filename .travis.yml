@@ -20,7 +20,7 @@ after_success:
 
   # JOURNAL SERVICE
   - export JOURNAL=rolandjurd/accounting-journal-service
-  - docker build -t $JOURNAL:$COMMIT ./journal
+  - docker build -t $JOURNAL:$COMMIT ./journal-service
   - docker tag $JOURNAL:$COMMIT $JOURNAL:$TAG
   - docker push $JOURNAL
 
