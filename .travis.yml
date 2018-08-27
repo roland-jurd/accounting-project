@@ -24,6 +24,11 @@ after_success:
   - docker tag $JOURNAL:$COMMIT $JOURNAL:$TAG
   - docker push $JOURNAL
 
+  # DISCOVERY SERVICE
+  - export DISCOVERY=rolandjurd/accounting-discovery-service
+  - docker build -t $JOURNAL:$COMMIT ./discovery-service
+  - docker tag $DISCOVERY:$COMMIT $JOURNAL:$TAG
+  - docker push $DISCOVERY
 
 addons:
   sonarcloud:
