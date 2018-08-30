@@ -1,7 +1,6 @@
-FROM java:8-jre
-MAINTAINER Roland Jurd <rbjurd@gmail.com>
+FROM anapsix/alpine-java
 
 ADD ./target/discovery-service.jar /app/
 CMD ["java", "-Xmx200m", "-jar", "/app/discovery-service.jar"]
 
-EXPOSE 7000
+EXPOSE 8761
