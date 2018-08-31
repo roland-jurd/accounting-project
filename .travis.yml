@@ -26,8 +26,8 @@ after_success:
 
   # DISCOVERY SERVICE
   - export DISCOVERY=rolandjurd/accounting-discovery-service
-  - docker build -t $JOURNAL:$COMMIT ./discovery-service
-  - docker tag $DISCOVERY:$COMMIT $JOURNAL:$TAG
+  - docker build -t $DISCOVERY:$COMMIT ./discovery-service
+  - docker tag $DISCOVERY:$COMMIT $DISCOVERY:$TAG
   - docker push $DISCOVERY
 
 addons:
